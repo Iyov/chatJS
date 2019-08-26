@@ -13,6 +13,7 @@ $(function(){
         messageBox.val('');
     });
 
+    //Recibe los datos del "new message" y los apendiza en el chat
     socket.on('new message', function(data) {
         chat.append(data + '<br/>');
     })

@@ -1,7 +1,6 @@
 {
   "name": "chatJS",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
@@ -10,6 +9,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.19.1"
-  }
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1",
+    "socket.io": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iyov/chatJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Iyov/chatJS/issues"
+  },
+  "homepage": "https://github.com/Iyov/chatJS#readme",
+  "description": "",
+  "dependencies": {}
 }

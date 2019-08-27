@@ -38,7 +38,7 @@ $(function(){
 
     //Recibe los datos del "new message" y los apendiza en el chat
     socket.on('new message', function(data) {
-        chat.append('<b>' + data.nick + '</b>: '+data.msg+'<br/>');
+        chat.append('<b>' + data.nick + '</b>:cls '+data.msg+'<br/>');
     });
 
     socket.on('usernames', data => {

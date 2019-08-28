@@ -32,13 +32,15 @@ $(function(){
     //events
     messageForm.submit( e => {
         e.preventDefault();
-        socket.emit('send message', messageBox.val());
+        socket.emit('send message', messageBox.val(), data => {
+            chat.append("<p class='error'>"+data+"</p>");
+        });
         messageBox.val('');
     });
 
     //Recibe los datos del "new message" y los apendiza en el chat
     socket.on('new message', function(data) {
-        chat.append('<b>' + data.nick + '</b>:cls '+data.msg+'<br/>');
+        chat.append('<b>' + data.nick + '</b>: '+data.msg+'<br/>');
     });
 
     socket.on('usernames', data => {
@@ -47,5 +49,9 @@ $(function(){
             html += '<p><i class="fas fa-user" /> '+data[i]+'</p>';
         }
         users.html(html);
+    });
+
+    socket.on('whisper', data => {
+        chat.append('<p class="whisper"><b>'+data.nick+':</b> '+data.msg+'</p>');
     });
 });

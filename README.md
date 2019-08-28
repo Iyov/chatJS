@@ -18,3 +18,8 @@ npm install socket.io -D
 ```
 npm install --save-dev nodemon
 ```
+* mongoDB: https://www.mongodb.com/download-center/community
+* mongoose: https://www.npmjs.com/package/mongoose
+```
+npm install mongoose
+```

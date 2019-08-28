@@ -3,9 +3,16 @@ const path = require('path');
 const express = require('express');
 const socketIO = require('socket.io');
 
+const mongoose = require('mongoose');
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIO.listen(server);
+
+// db connection
+mongoose.connect('mongodb://localhost/chat-database')
+    .then(db => console.log('db is conneted'))
+    .catch(err => console.log(err));
 
 app.set('port', process.env.PORT || 3000);
 require('./sockets')(io);
